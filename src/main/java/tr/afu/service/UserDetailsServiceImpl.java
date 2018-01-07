@@ -17,7 +17,7 @@ import tr.afu.dao.UserDao;
 import tr.afu.domain.User;
 
 @Service
-public class MyUserDetailsService implements UserDetailsService{
+public class UserDetailsServiceImpl implements UserDetailsService{
 
 	@Autowired
 	UserDao userDao;

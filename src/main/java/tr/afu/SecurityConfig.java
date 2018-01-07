@@ -8,14 +8,14 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import tr.afu.service.MyUserDetailsService;
+import tr.afu.service.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private MyUserDetailsService userDetailsService;
+	private UserDetailsServiceImpl userDetailsService;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth)
@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         authorizeRequests().
 		antMatchers("/**").fullyAuthenticated()
 		.antMatchers( "/login.jsf", "/javax.faces.resources/**").permitAll()
-				.and().formLogin().loginPage("/login.jsf").defaultSuccessUrl("/index.jsf").loginProcessingUrl("/login")
+				.and().formLogin().loginPage("/login.jsf").defaultSuccessUrl("/index.jsf",true).loginProcessingUrl("/login")
 				.permitAll().and().logout()
 				.logoutSuccessUrl("/listEmployees.html");
 

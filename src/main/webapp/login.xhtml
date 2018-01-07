@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<f:view contentType="text/html"
+<html contentType="text/html"
 	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:ui="http://java.sun.com/jsf/facelets" 
 	xmlns:h="http://java.sun.com/jsf/html" 
 	xmlns:f="http://java.sun.com/jsf/core"
     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
     xmlns:p="http://primefaces.org/ui">
-<html>
+
 
 <h:head>
   
@@ -18,14 +18,12 @@
 <h:body>
 
 <h:form id="form">
-
-  <p:accordionPanel value="213"></p:accordionPanel>
-
-<p:button value="#{controllerBean.asd}"></p:button>
-<p:button value="asd"></p:button>
-<p:commandLink value="dssd"  action="#{controllerBean.asds}"/>
+<h:panelGrid columns="1">
+<p:inputText value="#{controllerBean.username1}"/>
+<p:password value="#{controllerBean.password}"/>
+<p:commandLink value="Login"  action="#{controllerBean.login}" ajax="false"/>
+</h:panelGrid>
 </h:form>
 </h:body>
 
 </html>
-</f:view>

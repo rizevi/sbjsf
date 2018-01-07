@@ -18,11 +18,11 @@ import com.sun.faces.config.ConfigureListener;
 @ComponentScan
 @EnableAutoConfiguration
 @SpringBootApplication
-public class SpringBootJdbcApplication implements ServletContextAware  {
+public class SBApplication implements ServletContextAware  {
 	
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootJdbcApplication.class, args);
+		SpringApplication.run(SBApplication.class, args);
 	}
 
 	 @Bean
